@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 axios.defaults.baseURL = 'http://jsonplaceholder.typicode.com';
 axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';

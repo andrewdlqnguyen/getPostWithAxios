@@ -6,6 +6,7 @@ import Posts from '././Posts/Posts';
 
 import asyncComponent from '../../hoc/asyncComponent';
 import './Blog.css';
+import LatestProjects from '../../components/PersonalWeb/Projects/LatestProjects/LatestProjects';
 
 // This is only called when needed inside the code. Thus at the bottom,
 // this is called when authenication passes and newPost needs to be rendered.
@@ -38,6 +39,14 @@ class Blog extends Component {
                                 hash: "#submit",
                                 search: "?quick-submit=true"
                             }}>New Post</NavLink></li>
+                            <li><NavLink 
+                                to="/latest-projects/" 
+                                exact
+                                activeClassName="my-active"
+                                activeStyle={{
+                                    color: '#fa923f',
+                                    textDecoration: 'underline'
+                                }}>Latest Projects</NavLink></li>
                         </ul>
                     </nav>
                 </header>
@@ -45,7 +54,8 @@ class Blog extends Component {
                 <Route path="/" render={() => <h1>Home 2</h1>} /> */}
                 <Switch>
                     {this.state.auth ? <Route path="/new-post" component={AsyncNewPost}/>: null }
-                    <Route path="/posts" component={Posts}/>     
+                    <Route path="/posts" component={Posts}/> 
+                    <Route path="/latest-projects" component={LatestProjects}/>     
             <Route render={() => <h1>Not Found</h1>}/>
                     {/* <Redirect from="/" to="/posts"/> */}
                 </Switch>               
